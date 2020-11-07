@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
+      #warning { font-size: 1.2em; }
     </style>
   </head>
 <body>
@@ -15,13 +16,19 @@
          <div class="form-group">
              <input id="lunch-menu" type="text"
              placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control">
+             class="form-control"
+             ng-model="lunch">
          </div>
+
+         <p id="warning">This application does NOT consider an empty item as an item towards to the count!</p>
+
          <div class="form-group">
-             <button class="btn btn-default">Check If Too Much</button>
+             <button class="btn btn-default" ng-click="lunchProc()">Check If Too Much</button>
          </div>
+
          <div class="form-group message">
            <!-- Your message can go here. -->
+           {{msg}}
          </div>
    </div>
 
